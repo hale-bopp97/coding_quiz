@@ -44,7 +44,7 @@ var timerEl      = document.getElementById('timer');
 var questionEl   = document.getElementById('question');
 var answersEl    = document.getElementById('answers');
 var responceEl   = document.getElementById('responce');
-// var scoreboardEl = document.getElementById('scoreboard-section');
+var scoreEl      = document.getElementById('score');
 var startBtn = document.getElementById('start-button');
 // var scoreboardEl = document.getElementsByClassName('scoreboard-section');
 
@@ -82,7 +82,7 @@ function startTime() {
         if (seconds === 0 || questionIndex === questions.length) {
 
             clearInterval(timeInterval);
-            questionEl.textContent = 'GAME OVER';
+            showScore();
 
         }
 
@@ -119,16 +119,14 @@ function answerCheck(event) {
 
     if (questions[questionIndex].answer === event.target.textContent) {
 
-        // alert('correct');
         responceEl.textContent = "Correct________";
         showResponce(true);
 
     } else {
 
-        
-        // alert('wrong');
         responceEl.textContent = "Wrong__________";
         showResponce(true);
+        seconds -= 10;
 
     }
 
@@ -147,6 +145,17 @@ function showResponce(b) {
         responceEl.style.display = 'none';
 
     }
+
+}
+
+function showScore() {
+
+    startQuizEl.style.display  = 'none';
+    questionEl.style.display   = 'none';
+    scoreboardEl.style.display = 'flex';
+
+    scoreEl.textContent = 'Your final score is ' + seconds;
+
 }
 
 //(init)ialize game and add eventlisteners...
