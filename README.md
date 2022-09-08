@@ -34,4 +34,4 @@ LinkedIn: https://www.linkedin.com/in/matthew-hendricks-029a25a8/
 
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
-<!-- ![screen capture of site](https://github.com/hale-bopp97/coding_quiz/blob/main/assets/images/Capture.JPG?raw=true) -->
+![screen capture of site](https://github.com/hale-bopp97/coding_quiz/blob/main/assets/images/Capture.JPG?raw=true)
