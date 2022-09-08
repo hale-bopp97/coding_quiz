@@ -8,7 +8,7 @@ var questions = [
         answer: 'not much',
         options: ['I don\'t have change', 'what?', 'you too!', 'not much']
     },
-    
+
     {
         question: 'what is 2 + 2 = ?',
         answer: '4',
@@ -37,12 +37,12 @@ var questions = [
 ];
 
 //getting DOM elements from the different html sections...
-var startQuizEl = document.getElementById('start-section');
-var questionsEl = document.getElementById('quiz-section');
+var startQuizEl  = document.getElementById('start-section');
+var questionsEl  = document.getElementById('quiz-section');
 var scoreboardEl = document.getElementById('scoreboard-section');
-var timerEl = document.getElementById('timer');
-var questionEl = document.getElementById('question');
-var answersEl = document.getElementById('answers');
+var timerEl      = document.getElementById('timer');
+var questionEl   = document.getElementById('question');
+var answersEl    = document.getElementById('answers');
 
 // var scoreboardEl = document.getElementById('scoreboard-section');
 // var scoreboardEl = document.getElementById('scoreboard-section');
@@ -50,7 +50,7 @@ var startBtn = document.getElementById('start-button');
 // var scoreboardEl = document.getElementsByClassName('scoreboard-section');
 
 var questionIndex = 0;
-var seconds = 5;
+var seconds = 25;
 
 //kicks of the app with only the start section...
 function init() {
@@ -93,11 +93,11 @@ function startTime() {
 
 function populateQuestion() {
 
-    if (questionIndex != 0) {
+    //if (questionIndex != 0) {
 
         questionIndex++;
 
-    }
+    //}
 
     answersEl.textContent = '';
     questionEl.textContent = questions[questionIndex].question;
@@ -114,7 +114,30 @@ function populateQuestion() {
 
 }
 
+function answerCheck(event) {
+
+    event.preventDefault();
+
+    if (questions[questionIndex].answer === event.target.textContent) {
+
+        alert('correct');
+        //some dom element. textcontent = "yay correct!!!"
+        //TODOdoo show correct/incorrect feedback
+
+    } else {
+
+        
+        alert('wrong');
+        //some dom element. textcontent = "booooooooooo WRONG!!!"
+        //TODOdoo show correct/incorrect feedback
+
+    }
+
+    populateQuestion();
+
+}
+
 //(init)ialize game and add eventlisteners...
 init();
 startBtn.addEventListener('click', startQuiz);
-answersEl.addEventListener('click', );
+answersEl.addEventListener('click', answerCheck);
