@@ -49,14 +49,49 @@ body {
     font-size: 1em;
 }
 
-#quiz-section {
+/* #quiz-section {
     text-align: center;
-}
+} */
 
 #quiz-section #question {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #quiz-section #answers {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+
+#quiz-section #answers {
     text-align: center;
+}
+
+#score-section h1 {
+    padding: 5em 5em;
+}
+
+#score-section #return {
+    background-color: lightblue;
+    width: 9em;
+    padding: 1em 1.5em;
+    font-weight: bolder;
+    font-size: 1em;
+    margin: 1em;
+
+}
+
+#score-section #clear-scores {
+    background-color: lightblue;
+    width: 9em;
+    padding: 1em 1.5em;
+    font-weight: bolder;
+    font-size: 1em;
+    margin: 1em;
+
 }

@@ -5,11 +5,11 @@ var clearBtn      = document.getElementById('clear-scores');
 finalScores = JSON.parse(localStorage.getItem('finalScores') || '[]');///LOOK HERE FOR BUG
 console.log(finalScores[0].score + ' final scores...');
 
-// finalScores.sort(function(x, y) {
+finalScores.sort(function(x, y) {
 
-//     return x.score - y.score;
+    return x.score - y.score;
 
-// });
+});
 
 for (var i = 0; i < finalScores.length; i++) {
 
