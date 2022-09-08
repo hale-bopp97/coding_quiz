@@ -1,5 +1,3 @@
-// alert('whooo...')
-
 //array of question objects to populate the quiz area with...
 var questions = [
 
@@ -45,11 +43,11 @@ var questionEl   = document.getElementById('question');
 var answersEl    = document.getElementById('answers');
 var responceEl   = document.getElementById('responce');
 var scoreEl      = document.getElementById('score');
-var startBtn = document.getElementById('start-button');
-// var scoreboardEl = document.getElementsByClassName('scoreboard-section');
+var startBtn     = document.getElementById('start-button');
+var submitBtn    = document.getElementById('enter-score-button');
 
 var questionIndex = -1;
-var seconds = 25;
+var seconds       = 75;
 
 //kicks of the app with only the start section...
 function init() {
@@ -63,7 +61,7 @@ function init() {
 function startQuiz() {
 
     startQuizEl.style.display = 'none';
-    questionEl.style.display = 'flex';
+    questionEl.style.display  = 'flex';
 
     startTime();
     populateQuestion();
@@ -92,13 +90,9 @@ function startTime() {
 
 function populateQuestion() {
 
-    //if (questionIndex != 0) {
+    questionIndex++;
 
-        questionIndex++;
-
-    //}
-
-    answersEl.textContent = '';
+    answersEl.textContent  = '';
     questionEl.textContent = questions[questionIndex].question;
 
     var answerButtons = questions[questionIndex].options;
@@ -119,12 +113,12 @@ function answerCheck(event) {
 
     if (questions[questionIndex].answer === event.target.textContent) {
 
-        responceEl.textContent = "Correct________";
+        responceEl.textContent = 'Correct';
         showResponce(true);
 
     } else {
 
-        responceEl.textContent = "Wrong__________";
+        responceEl.textContent = 'Wrong';
         showResponce(true);
         seconds -= 10;
 
@@ -150,6 +144,8 @@ function showResponce(b) {
 
 function showScore() {
 
+    showResponce(false);
+
     startQuizEl.style.display  = 'none';
     questionEl.style.display   = 'none';
     scoreboardEl.style.display = 'flex';
@@ -157,6 +153,26 @@ function showScore() {
     scoreEl.textContent = 'Your final score is ' + seconds;
 
 }
+
+function toScoreStr() {
+
+    var initialsEl   = document.getElementById('player-initials');
+    var scoreObj     = { initials: initialsEl, score: seconds };
+    var finalScore   = JSON.parse(localStorage.getItem('finalScores') || '[]');
+
+    finalScore.push(scoreObj);
+    localStorage.setItem('finalScore', JSON.stringify(finalScore));
+
+}
+
+submitBtn.addEventListener('click', function(event) {
+
+    event.stopPropagation();
+    toScoreStr();
+
+    location.href = './scoreboard.html';
+
+});
 
 //(init)ialize game and add eventlisteners...
 init();
