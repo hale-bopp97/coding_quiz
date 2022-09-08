@@ -158,10 +158,10 @@ function toScoreStr() {
 
     var initialsEl   = document.getElementById('player-initials');
     var scoreObj     = { initials: initialsEl, score: seconds };
-    var finalScore   = JSON.parse(localStorage.getItem('finalScores') || '[]');
+    var finalScores   = JSON.parse(localStorage.getItem('finalScores') || '[]');
 
-    finalScore.push(scoreObj);
-    localStorage.setItem('finalScore', JSON.stringify(finalScore));
+    finalScores.push(scoreObj);
+    localStorage.setItem('finalScores', JSON.stringify(finalScores));
 
 }
 
