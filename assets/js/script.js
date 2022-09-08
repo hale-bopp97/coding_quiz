@@ -23,7 +23,7 @@ var questions = [
 
     {
         question: 'what is 10^2 = ?',
-        answer: '6',
+        answer: '100',
         options: ['1000', '100', '10', '1']
     },
 
