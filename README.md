@@ -16,7 +16,7 @@ None.
 
 ### Executing program
 
-Application is hosted on Github pages at: 
+Application is hosted on Github pages at: https://hale-bopp97.github.io/coding_quiz/
 
 ## Authors
 
@@ -34,4 +34,4 @@ LinkedIn: https://www.linkedin.com/in/matthew-hendricks-029a25a8/
 
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
-<!-- ![screen capture of site](https://github.com/hale-bopp97/) -->
+<!-- ![screen capture of site](https://github.com/hale-bopp97/coding_quiz/blob/main/assets/images/Capture.JPG?raw=true) -->
