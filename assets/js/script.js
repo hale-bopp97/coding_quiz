@@ -43,13 +43,12 @@ var scoreboardEl = document.getElementById('scoreboard-section');
 var timerEl      = document.getElementById('timer');
 var questionEl   = document.getElementById('question');
 var answersEl    = document.getElementById('answers');
-
-// var scoreboardEl = document.getElementById('scoreboard-section');
+var responceEl   = document.getElementById('responce');
 // var scoreboardEl = document.getElementById('scoreboard-section');
 var startBtn = document.getElementById('start-button');
 // var scoreboardEl = document.getElementsByClassName('scoreboard-section');
 
-var questionIndex = 0;
+var questionIndex = -1;
 var seconds = 25;
 
 //kicks of the app with only the start section...
@@ -120,21 +119,34 @@ function answerCheck(event) {
 
     if (questions[questionIndex].answer === event.target.textContent) {
 
-        alert('correct');
-        //some dom element. textcontent = "yay correct!!!"
-        //TODOdoo show correct/incorrect feedback
+        // alert('correct');
+        responceEl.textContent = "Correct________";
+        showResponce(true);
 
     } else {
 
         
-        alert('wrong');
-        //some dom element. textcontent = "booooooooooo WRONG!!!"
-        //TODOdoo show correct/incorrect feedback
+        // alert('wrong');
+        responceEl.textContent = "Wrong__________";
+        showResponce(true);
 
     }
 
     populateQuestion();
 
+}
+
+function showResponce(b) {
+
+    if (b) {
+
+        responceEl.style.display = 'flex';
+
+    } else {
+
+        responceEl.style.display = 'none';
+
+    }
 }
 
 //(init)ialize game and add eventlisteners...
