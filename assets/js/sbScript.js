@@ -2,19 +2,22 @@ var leaderBoardEl = document.getElementById('leader-board');
 var returnBtn     = document.getElementById('return');
 var clearBtn      = document.getElementById('clear-scores');
 
-finalScores   = JSON.parse(localStorage.getItem('finalScores') || '[]');
+finalScores = JSON.parse(localStorage.getItem('finalScores') || '[]');///LOOK HERE FOR BUG
+console.log(finalScores[0].score + ' final scores...');
 
-finalScores.sort(function(x, y) {
+// finalScores.sort(function(x, y) {
 
-    return x.score - y.score;
+//     return x.score - y.score;
 
-});
+// });
 
-for (var i = 0; i < finalScores; i++) {
+for (var i = 0; i < finalScores.length; i++) {
 
-    var listElements = document.createElement('li');
+    var listElements = document.createElement("li");
+    console.log(listElements + 'list elements...');
 
     listElements.textContent = finalScores[i].initials + " --- " + finalScores[i].score;
+    console.log(listElements.textContent);
 
     leaderBoardEl.appendChild(listElements);
 

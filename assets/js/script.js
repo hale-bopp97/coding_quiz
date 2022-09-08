@@ -2,34 +2,34 @@
 var questions = [
 
     {
-        question: 'what\'s up?',
-        answer: 'not much',
-        options: ['I don\'t have change', 'what?', 'you too!', 'not much']
+        question: 'Commonly used data types DO not inclued:',
+        answer: 'alerts',
+        options: ['strings', 'booleans', 'alerts', 'numbers']
     },
 
     {
-        question: 'what is 2 + 2 = ?',
-        answer: '4',
-        options: ['4', '3', '2', '1']
+        question: 'The condition in an if/else statement is enclosed with:',
+        answer: 'parenthesis',
+        options: ['quotes', 'curly brackets', 'parenthesis', 'square brackets']
     },
     
     {
-        question: 'what is 2 * 3 = ?',
-        answer: '6',
-        options: ['2', '4', '6', '8']
+        question: 'Arrays in JavaScript can be used to store:',
+        answer: 'all of the above',
+        options: ['numbers and strings', 'other arrays', 'booleans', 'all of the above']
     },
 
     {
-        question: 'what is 10^2 = ?',
-        answer: '100',
-        options: ['1000', '100', '10', '1']
+        question: 'String values must beenclosed within ______ when being assigned to variables.',
+        answer: 'quotes',
+        options: ['commas', 'curly brackets', 'quotes', 'parenthesis']
     },
 
 
     {
-        question: 'what car should I get?',
-        answer: 'toyota... it\'s always toyota',
-        options: ['my ford cvt is disintegrating', '4', 'toyota... it\'s always toyota', 'My nissan\'s wiring harness is moody:(']
+        question: 'A very useful tool used during development and debugging for printing content to the debugger is:',
+        answer: 'console.log',
+        options: ['JavaScript', 'terminal/bash', 'for loops', 'console.log']
     },
 
 ];
@@ -105,6 +105,7 @@ function populateQuestion() {
 
     }
 
+    //???
 }
 
 function answerCheck(event) {
@@ -156,9 +157,9 @@ function showScore() {
 
 function toScoreStr() {
 
-    var initialsEl   = document.getElementById('player-initials');
+    var initialsEl   = document.getElementById('player-initials').value;
     var scoreObj     = { initials: initialsEl, score: seconds };
-    var finalScores   = JSON.parse(localStorage.getItem('finalScores') || '[]');
+    var finalScores  = JSON.parse(localStorage.getItem('finalScores') || '[]');
 
     finalScores.push(scoreObj);
     localStorage.setItem('finalScores', JSON.stringify(finalScores));
