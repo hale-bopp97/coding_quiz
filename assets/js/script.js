@@ -47,7 +47,7 @@ var startBtn     = document.getElementById('start-button');
 var submitBtn    = document.getElementById('enter-score-button');
 
 var questionIndex = 0;
-var seconds       = -75;
+var seconds       = 75;
 
 //kicks of the app with only the start section...
 function init() {
