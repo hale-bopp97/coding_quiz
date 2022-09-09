@@ -20,7 +20,7 @@ var questions = [
     },
 
     {
-        question: 'String values must beenclosed within ______ when being assigned to variables.',
+        question: 'String values must be enclosed within ______ when being assigned to variables.',
         answer: 'quotes',
         options: ['commas', 'curly brackets', 'quotes', 'parenthesis']
     },
@@ -58,6 +58,7 @@ function init() {
 
 }
 
+//gets rid of start info, starts timer and gets the first question...
 function startQuiz() {
 
     startQuizEl.style.display = 'none';
@@ -88,6 +89,7 @@ function startTime() {
 
 }
 
+//grabs strings from one of the questions objects and fills out the question/answer buttons with them...
 function populateQuestion() {
 
     questionIndex++;
@@ -105,9 +107,9 @@ function populateQuestion() {
 
     }
 
-    //???
 }
 
+//checks the button pressed with the stored answer and retuns a right/wrong responce...
 function answerCheck(event) {
 
     event.preventDefault();
@@ -129,6 +131,7 @@ function answerCheck(event) {
 
 }
 
+//something to show/not show the 'Correct' and 'Wrong' message at the bottom...
 function showResponce(b) {
 
     if (b) {
@@ -143,6 +146,7 @@ function showResponce(b) {
 
 }
 
+//shuts off the other sections and gets the score...
 function showScore() {
 
     showResponce(false);
@@ -155,6 +159,7 @@ function showScore() {
 
 }
 
+//makes a string out of the player initials and the remaining time. Also pushes them onto an array...
 function toScoreStr() {
 
     var initialsEl   = document.getElementById('player-initials').value;
@@ -166,6 +171,7 @@ function toScoreStr() {
 
 }
 
+//submit your initials button
 submitBtn.addEventListener('click', function(event) {
 
     event.stopPropagation();
